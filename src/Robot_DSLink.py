@@ -37,11 +37,8 @@ pwm.set_pwm_freq(60)
 class DSLink_Robot(dslink.DSLink):
     def start(self):
         print("Starting Robot")
-        #self.update_data()
 
     def get_default_nodes(self, super_root):
-        for i in range(16):
-            print(i)
     	servo_0 = dslink.Node("servo_0", super_root)
         servo_0.set_display_name("Servo 0")
         servo_0.set_type("number")
@@ -176,9 +173,6 @@ class DSLink_Robot(dslink.DSLink):
     	node_name = node.name
     	arr = node_name.split("_");
     	pwm.set_pwm(int(arr[1]), 0, value)
-
-    #def update_data(self):
-        #reactor.callLater(1, self.update_data)
 
 if __name__ == "__main__":
     DSLink_Robot(dslink.Configuration("Robot", responder=True))
