@@ -1,0 +1,25 @@
+{
+  "name": "dslink-python-robot",
+  "version": "0.1.0",
+  "description": "DSLink for Raspberry Pi pca9685",
+  "main": "src/Robot_DSLink.py",
+  "sudo": true,
+  "engines": {
+    "packages/bin/python": ">=2.7.0"
+  },
+  "getDependencies": [
+    "sudo pip install ez_setup",
+    "sudo apt-get --assume-yes install build-essential python-dev python-smbus",
+    "virtualenv packages",
+    "packages/bin/pip install adafruit-pca9685",
+    "packages/bin/python setup.py install"
+  ],
+  "configs": {
+    "broker": {
+      "type": "url"
+    },
+    "token": {
+      "type": "string"
+    }
+  }
+}
